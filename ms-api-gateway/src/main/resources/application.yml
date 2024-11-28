@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**
+        - id: category-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/categories/**
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
+        - id: ms-master
+          uri: lb://MASTER-SERVICE
+          predicates:
+            - Path=/master/**
+  application:
+    name: api-gateway
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
