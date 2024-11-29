@@ -21,7 +21,7 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
-        - id: ms-master
+        - id: master-service
           uri: lb://MASTER-SERVICE
           predicates:
             - Path=/master/**

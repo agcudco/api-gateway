@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ms-master
+    name: master-service
   datasource:
     url: jdbc:postgresql://localhost:5432/products_db
     username: postgres

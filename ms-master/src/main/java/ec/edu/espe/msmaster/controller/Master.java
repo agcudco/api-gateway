@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("master")
+@RequestMapping("/master")
 public class Master {
 
     @GetMapping("/")
